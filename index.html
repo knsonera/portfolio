@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mind Games Lab LLC</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Montserrat', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.8;
+        }
+        header {
+            background-color: #351147;
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        header img {
+            max-width: 120px;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #6c408f;
+            padding: 10px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+        nav a:hover {
+            color: #f5f7fa;
+            background-color: #6c4acb;
+            border-radius: 5px;
+        }
+        section {
+            padding: 20px 20px;
+            max-width: 900px;
+            margin: 20px auto;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-in-out;
+            scroll-margin-top: 80px; /* Adjust this value based on your header height */
+        }
+        .tile {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #f9fafc;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .tile img {
+            width: 60px;
+            height: 60px;
+            margin-right: 20px;
+        }
+        .tile a {
+            color: #6c4acb;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .note {
+          color: #6c408f;
+          font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #351147;
+            color: white;
+            font-size: 14px;
+            margin-top: 30px;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @media (max-width: 768px) {
+            .tile {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .tile img {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="assets/mindgames.png" alt="Mind Games Lab Logo">
+        <h1>Mind Games Lab</h1>
+        <p>Blending technology and psychology to power personal growth.</p>
+    </header>
+    <nav>
+        <a href="#mission">Mission</a>
+        <a href="#projects">Projects</a>
+        <a href="#volunteer">Volunteering</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+    </nav>
+    <section id="mission">
+        <h2>Our Mission</h2>
+        <p>At Mind Games Lab, our mission is to combine cutting-edge technology, gamification, and psychological insights to help people build better habits, foster meaningful connections, and gain deeper self-awareness. We create innovative, engaging tools that make personal growth enjoyable and accessible for everyone.</p>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="tile">
+            <img src="assets/habitbuddies.png" alt="Habit Buddies Icon">
+            <div>
+                <h3>Habit Buddies</h3>
+                <p>Habit Buddies is a community-driven app designed to make building new habits engaging and collaborative. It combines smart habit-tracking tools with the power of social connections, enabling you to grow alongside your friends. Share progress, motivate each other, and celebrate milestones together, all while forming lasting positive habits.</p>
+                <p class="note">Currently in development.</p>
+            </div>
+        </div>
+        <div class="tile">
+            <img src="assets/arcana.png" alt="Arcana Icon">
+            <div>
+                <h3>Arcana App</h3>
+                <p>The Arcana App uses tarot cards as a psychological tool to promote self-reflection and personal discovery. It offers thought-provoking insights that encourage users to explore their inner world. It provides a fun and entertaining way to tackle daily challenges and find inspiration for new beginnings.</p>
+                <p class="note">Currently in development.</p>
+            </div>
+        </div>
+    </section>
+    <section id="volunteer">
+        <h2>Volunteer Work</h2>
+        <div class="tile">
+            <img src="assets/sva.png" alt="SVA Icon">
+            <div>
+                <h3>Gurudevi Nirmalananda App</h3>
+                <p>Developed for the spiritual teacher Gurudevi Nirmalananda Saraswati, a modern-day sage and Guru, this app provides yogic wisdom for modern living. The app contains a collection of quotes, teachings, meditative insights, podcasts and videos, and informs the yogic community about upcoming programs and events.</p>
+                <p>Available on <a href="#">App Store</a> and <a href="#">Google Play</a>.</p>
+            </div>
+        </div>
+    </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>Hello! I am Alina Uzhvieva, the founder of Mind Games Lab. As a software engineer and entrepreneur, I'm excited to make meaningful tools for personal growth and well-being. With a background in both computer science and psychology, and years of experience in software engineering, I founded Mind Games Lab to create apps that inspire healthier habits, support in daily challenges, build meaningful connections and empower people to navigate their daily lives with ease and joy.</p>
+    </section>
+    <section id="contact">
+        <h2>Contacts</h2>
+        <p>Email: <a href="mailto:admin@mindgameslab.com">admin@mindgameslab.com</a></p>
+        <p>Phone: (123) 456-7890</p>
+    </section>
+    <footer>
+        <p>&copy; 2025 Mind Games Lab LLC. All rights reserved.</p>
+    </footer>
+</body>
+</html>
