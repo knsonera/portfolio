@@ -99,6 +99,16 @@
           color: #6c408f;
           font-weight: 600;
         }
+        .about-section {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .about-section img {
+            max-width: 250px;
+            border-radius: 2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+        }
         footer {
             text-align: center;
             padding: 20px;
@@ -133,6 +143,14 @@
             }
             h2 {
                 text-align: center;
+            }
+            .about-section {
+                flex-direction: column;
+                text-align: center;
+                gap: 10px;
+            }
+            .about-section img {
+                margin-bottom: 5px;
             }
         }
     </style>
@@ -188,7 +206,10 @@
     </section>
     <section id="about">
         <h2>About Me</h2>
-        <p>Hello! I am Alina Uzhvieva, the founder of Mind Games Lab. As a software engineer and entrepreneur, I'm excited to make meaningful tools for personal growth and well-being. With a background in both computer science and psychology, and years of experience in software engineering, I founded Mind Games Lab to create apps that inspire healthier habits, support in daily challenges, build meaningful connections and empower people to navigate their daily lives with ease and joy.</p>
+        <div class="about-section">
+            <img src="assets/portrait2.jpg" alt="Alina Uzhvieva Portrait">
+            <p>Hello! I am Alina Uzhvieva, the founder of Mind Games Lab. As a software engineer and entrepreneur, I'm excited to make meaningful tools for personal growth and well-being. With a background in both computer science and psychology, and years of experience in software engineering, I founded Mind Games Lab to create apps that inspire healthier habits, support in daily challenges, build meaningful connections and empower people to navigate their daily lives with ease and joy.</p>
+        </div>
     </section>
     <section id="contact">
         <h2>Contacts</h2>
