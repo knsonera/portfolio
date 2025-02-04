@@ -15,12 +15,12 @@
             font-family: 'Montserrat', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f7fa;
+            background-color: #4da5c6;
             color: #333;
             line-height: 1.8;
         }
         header {
-            background-color: #351147;
+            background-color: #5D3A78;
             color: white;
             padding: 30px;
             text-align: center;
@@ -33,7 +33,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-            background-color: #6c408f;
+            background-color: #116151;
             padding: 10px 20px;
             position: sticky;
             top: 0;
@@ -47,8 +47,8 @@
             transition: all 0.3s;
         }
         nav a:hover {
-            color: #f5f7fa;
-            background-color: #6c4acb;
+            color: #F5F7FA;
+            background-color: #835DA5;
             border-radius: 5px;
         }
         .menu {
@@ -65,12 +65,19 @@
             font-weight: 600;
             font-size: 16px;
         }
+        .hamburger span {
+            width: 16px;
+            height: 16px;
+            border: solid 2px white;
+            border-radius: 50%;
+            display: inline-block;
+        }
         section {
             padding: 20px 20px;
             max-width: 900px;
             margin: 20px auto;
             background: white;
-            border-radius: 12px;
+            border-radius: 2px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             animation: fadeIn 0.5s ease-in-out;
             scroll-margin-top: 80px;
@@ -80,10 +87,11 @@
             align-items: center;
             padding: 15px;
             margin: 15px 0;
-            background-color: #f9fafc;
+            background-color: #116151;
             border: 1px solid #ddd;
-            border-radius: 10px;
+            border-radius: 2px;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            color: white;
         }
         .tile img {
             width: 60px;
@@ -91,18 +99,18 @@
             margin-right: 20px;
         }
         .tile a {
-            color: #6c4acb;
+            color: #E3A47E;
             text-decoration: none;
             font-weight: 600;
         }
         .note {
-          color: #6c408f;
+          color: #4da5c6;
           font-weight: 600;
         }
         .about-section {
             display: flex;
             align-items: center;
-            gap: 40px;
+            gap: 20px;
         }
         .about-section img {
             max-width: 250px;
@@ -112,7 +120,7 @@
         footer {
             text-align: center;
             padding: 20px;
-            background-color: #351147;
+            background-color: #5D3A78;
             color: white;
             font-size: 14px;
             margin-top: 30px;
@@ -127,30 +135,39 @@
                 transform: translateY(0);
             }
         }
-        @media (max-width: 668px) {
-            nav {
-                display: none;
+        @media (max-width: 768px) {
+            h3 {
+                text-align: center;
             }
             .menu {
                 display: none;
+                flex-direction: column;
+                background-color: #5D3A78;
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                padding: 10px;
+                border-radius: 0 0 10px 10px;
+            }
+            .menu.active {
+                display: flex;
+            }
+            .hamburger {
+                display: flex;
+                justify-content: center;
             }
             nav a {
                 padding: 10px;
                 text-align: center;
             }
-            section {
-                border-radius: 1px;
-            }
-            h2 {
-                text-align: center;
-            }
             .about-section {
                 flex-direction: column;
                 text-align: center;
-                gap: 10px;
             }
             .about-section img {
-                margin-bottom: 5px;
+                margin-bottom: 15px;
+                max-width: 300px;
             }
         }
     </style>
@@ -207,6 +224,7 @@
     <section id="about">
         <h2>About Me</h2>
         <div class="about-section">
+            <img src="assets/me.png" alt="Alina Uzhvieva Portrait">
             <p>Hello! I am Alina Uzhvieva, the founder of Mind Games Lab. As a software engineer and entrepreneur, I'm excited to make meaningful tools for personal growth and well-being. With a background in both computer science and psychology, and years of experience in software engineering, I founded Mind Games Lab to create apps that inspire healthier habits, support in daily challenges, build meaningful connections and empower people to navigate their daily lives with ease and joy.</p>
         </div>
     </section>
