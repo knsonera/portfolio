@@ -4,237 +4,242 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mind Games Lab LLC</title>
-    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/favicon-32x32.png" sizes="32x32" type="image/png">
-    <link rel="icon" href="assets/favicon-16x16.png" sizes="16x16" type="image/png">
-    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
-    <link rel="manifest" href="assets/site.webmanifest">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Montserrat', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #5D3A78;
+            background-color: #F5F7FA;
             color: #333;
             line-height: 1.8;
         }
         header {
-            background-color: #5D3A78;
-            color: white;
-            padding: 30px;
-            text-align: center;
-        }
-        header img {
-            max-width: 120px;
-            margin-bottom: 5px;
-        }
-        nav {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            background-color: #116151;
-            padding: 10px 20px;
-            position: sticky;
+            background: #d9d9d9;
+            padding: 20px 50px;
             top: 0;
             z-index: 1000;
         }
+        header img {
+            max-height: 100px;
+            background-color: #d9d9d9;
+            padding: 10px;
+        }
+        nav {
+            display: flex;
+            gap: 30px;
+        }
         nav a {
-            color: white;
-            padding: 10px 20px;
+            color: #333;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s;
         }
         nav a:hover {
-            color: #F5F7FA;
-            background-color: #835DA5;
+            color: #5D3A78;
+        }
+        .cta-button {
+            background-color: #5D3A78;
+            color: white;
+            padding: 10px 20px;
             border-radius: 5px;
-        }
-        .menu {
-            display: flex;
-            gap: 10px;
-        }
-        .hamburger {
-            display: none;
-            cursor: pointer;
-            flex-direction: row;
-            align-items: center;
-            gap: 5px;
-            color: white;
-            font-weight: 600;
-            font-size: 16px;
-        }
-        .hamburger span {
-            width: 16px;
-            height: 16px;
-            border: solid 2px white;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        section {
-            padding: 20px 20px;
-            max-width: 900px;
-            margin: 20px auto;
-            background: #372744;
-            color: white;
-            border-radius: 2px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            animation: fadeIn 0.5s ease-in-out;
-            scroll-margin-top: 80px;
-        }
-        a {
-          color: #4da5c6;
-        }
-        .tile {
-            display: flex;
-            align-items: center;
-            padding: 15px;
-            margin: 15px 0;
-            background-color: #116151;
-            border-radius: 2px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            color: white;
-        }
-        .tile img {
-            width: 60px;
-            height: 60px;
-            margin-right: 20px;
-        }
-        .tile a {
-            color: #4da5c6;
             text-decoration: none;
             font-weight: 600;
         }
-        .note {
-          color: #f9c6a7;
-          font-weight: 600;
+        .cta-button:hover {
+            background-color: #835DA5;
         }
-        .about-section {
+        .hero {
             display: flex;
+            justify-content: space-around;
             align-items: center;
-            gap: 20px;
+            padding: 20px;
+            background-color: white;
         }
-        .about-section img {
-            max-width: 250px;
+        .hero-text {
+            max-width: 500px;
+        }
+        .hero h1 {
+            font-size: 40px;
+            font-weight: 800;
+            color: #5D3A78;
+        }
+        .hero p {
+            font-size: 18px;
+            color: #555;
+        }
+        .hero img {
+            max-width: 400px;
             border-radius: 2px;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
+        .section {
+            padding: 0px 30px 30px 30px;
+            text-align: center;
+        }
+        .section h2 {
+            font-size: 32px;
+            font-weight: 800;
+            color: #5D3A78;
+        }
+        .section p {
+            font-size: 18px;
+            color: #555;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        .tiles {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+        }
+        .tile {
+            background-color: #FFFFFF;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+        }
+        .tile img {
+            max-width: 100px;
+            margin: 0 auto 20px;
+            display: block;
+        }
+        .tile h3 {
+            color: #5D3A78;
+            font-size: 22px;
+        }
+        .note {
+          color: #4da5c6;
+          font-weight: 600;
+          padding-top: 20px;
+        }
+        .description {
+          font-size: 18px;
+          color: #444;
+          line-height: 1.8;
+          text-align: justify;
+          padding: 15px;
+        }
+        .about-section img {
+          max-width: 300px;
+        }
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 50px;
             background-color: #5D3A78;
             color: white;
             font-size: 14px;
-            margin-top: 30px;
         }
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
+        @media (max-width: 900px) {
+            header {
+                justify-content: space-between;
+                padding: 15px 30px;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        @media (max-width: 768px) {
-            h3 {
-                text-align: center;
-            }
-            .menu {
+            nav {
                 display: none;
-                flex-direction: column;
-                background-color: #5D3A78;
-                position: absolute;
-                top: 60px;
-                left: 0;
-                right: 0;
-                padding: 10px;
-                border-radius: 0 0 10px 10px;
             }
-            .menu.active {
-                display: flex;
-            }
-            .hamburger {
-                display: flex;
-                justify-content: center;
-            }
-            nav a {
-                padding: 10px;
-                text-align: center;
-            }
-            .about-section {
+            .hero {
                 flex-direction: column;
                 text-align: center;
+                background: url('assets/me.png') no-repeat top center/cover;
+                padding-top: 400px;
+            }
+            .hero-text {
+                background: rgba(255, 255, 255, 0.6);
+                color: white;
+                padding: 30px;
+                border-radius: 10px;
+                max-width: 90%;
+            }
+            .hero h1 {
+                font-size: 30px;
+                font-weight: 800;
+                color: #5D3A78;
+                margin: 0;
+            }
+            .hero p {
+                margin-bottom: 30px;
+            }
+            .hero img {
+                display: none;
+            }
+            .tiles {
+                flex-direction: column;
+                align-items: center;
             }
             .about-section img {
-                margin-bottom: 15px;
-                max-width: 300px;
+                max-width: 250px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="assets/mindgames.png" alt="Mind Games Lab Logo">
-        <h1>Mind Games Lab</h1>
-        <p>Blending technology and psychology to power personal growth.</p>
-    </header>
-    <nav>
-        <div class="menu">
-            <a href="#mission">Mission</a>
+        <img src="assets/name-logo.png" alt="Mind Games Lab Logo">
+        <nav>
             <a href="#projects">Projects</a>
             <a href="#volunteer">Volunteering</a>
             <a href="#about">About</a>
             <a href="#contact">Contact</a>
+        </nav>
+        <a href="#contact" class="cta-button">Get in Touch</a>
+    </header>
+    <section class="hero">
+        <div class="hero-text">
+            <h1>Blending Psychology & Technology for Growth</h1>
+            <p>At Mind Games Lab we develop innovative, gamified apps that help people build habits, foster connections, and enhance self-awareness through smart technology.</p>
+            <a href="#projects" class="cta-button">Explore Our Apps</a>
         </div>
-    </nav>
-    <section id="mission">
-        <h2>Our Mission</h2>
-        <p>At Mind Games Lab, our mission is to combine cutting-edge technology, gamification, and psychological insights to help people build better habits, foster meaningful connections, and gain deeper self-awareness. We create innovative, engaging tools that make personal growth enjoyable and accessible for everyone.</p>
+        <img src="assets/me.png" alt="Alina Uzhvieva Portrait">
     </section>
-    <section id="projects">
+    <section id="projects" class="section">
         <h2>Projects</h2>
-        <div class="tile">
-            <img src="assets/habitbuddies.png" alt="Habit Buddies Icon">
-            <div>
+        <div class="tiles">
+            <div class="tile">
+                <img src="assets/habitbuddies.png" alt="Habit Buddies">
                 <h3>Habit Buddies</h3>
                 <p>HabitBuddies is a mobile app that turns habit-building into a team adventure. If you want to start running, reading, meditating, or even flossing regularly, you can create a quest in HabitBuddies for a week, a month, or any timeframe and invite friends to build the habit together.
 </p><p>It’s easier together—you can discuss progress and achievements in a chat, support each other with likes and power-ups, and track your friends’ progress. This makes the process not only effective but also genuinely fun!</p>
                 <p class="note">Currently in development.</p>
             </div>
-        </div>
-        <div class="tile">
-            <img src="assets/arcana.png" alt="Arcana Icon">
-            <div>
+            <div class="tile">
+                <img src="assets/arcana.png" alt="Arcana App">
                 <h3>Arcana App</h3>
                 <p>The Arcana App uses tarot cards as a psychological tool to promote self-reflection and personal discovery. It offers thought-provoking insights that encourage users to explore their inner world. It provides a fun and entertaining way to tackle daily challenges and find inspiration for new beginnings.</p>
                 <p class="note">Currently in development.</p>
             </div>
         </div>
     </section>
-    <section id="volunteer">
-        <h2>Volunteer Work</h2>
-        <div class="tile">
-            <img src="assets/sva.png" alt="SVA Icon">
-            <div>
-                <h3>Gurudevi Nirmalananda App</h3>
-                <p>Developed for the spiritual teacher Gurudevi Nirmalananda Saraswati, a modern-day sage and Guru, this app provides yogic wisdom for modern living. The app contains a collection of quotes, teachings, meditative insights, podcasts and videos, and informs the yogic community about upcoming programs and events.</p>
-                <p>Available on <a href="https://apps.apple.com/us/app/gurudevi-nirmalananda/id6502962204">App Store</a> and <a href="https://play.google.com/store/apps/details?id=org.svaroopa.GNSapp">Google Play</a>.</p>
-            </div>
-        </div>
+    <section id="volunteer" class="section">
+        <h2>Community Contributions</h2>
+        <div class="tiles">
+          <div class="tile">
+              <img src="assets/sva.png" alt="SVA Icon">
+              <h3>Gurudevi Nirmalananda App</h3>
+              <p>Developed for the spiritual teacher Gurudevi Nirmalananda Saraswati, a modern-day sage and Guru, this app provides yogic wisdom for modern living. The app contains a collection of quotes, teachings, meditative insights, podcasts and videos, and informs the yogic community about upcoming programs and events.</p>
+              <p class="note">Available on <a href="https://apps.apple.com/us/app/gurudevi-nirmalananda/id6502962204">App Store</a> and <a href="https://play.google.com/store/apps/details?id=org.svaroopa.GNSapp">Google Play</a>.</p>
+          </div>
+      </div>
     </section>
-    <section id="about">
-        <h2>About Me</h2>
+    <section id="about" class="section">
+        <h2>Meet the Founder</h2>
         <div class="about-section">
-            <img src="assets/me.png" alt="Alina Uzhvieva Portrait">
-            <p>Hello! I am Alina Uzhvieva, the founder of Mind Games Lab. As a software engineer and entrepreneur, I'm excited to make meaningful tools for personal growth and well-being. With a background in both computer science and psychology, and years of experience in software engineering, I founded Mind Games Lab to create apps that inspire healthier habits, support in daily challenges, build meaningful connections and empower people to navigate their daily lives with ease and joy.</p>
+            <img src="assets/founder.jpg" alt="Alina Uzhvieva Portrait">
+            <p class="description">Hello! I am Alina Uzhvieva, the founder of Mind Games Lab. As a software engineer and entrepreneur, I'm excited to make meaningful tools for personal growth and well-being. With a background in both computer science and psychology, and years of experience in software engineering, I founded Mind Games Lab to create apps that inspire healthier habits, support in daily challenges, build meaningful connections and empower people to navigate their daily lives with ease and joy.</p>
         </div>
     </section>
-    <section id="contact">
-        <h2>Contacts</h2>
-        <p>Email: <a href="mailto:admin@mindgameslab.com">admin@mindgameslab.com</a></p>
+    <section id="contact" class="section">
+        <h2>Contact</h2>
+        <p class="description">Whether you have a question about current projects, collaboration opportunities, or just want to connect, feel free to reach out. Your feedback and ideas help Mind Games Lab grow and improve!</p>
+        <p class="note">Email: <a href="mailto:admin@mindgameslab.com">admin@mindgameslab.com</a></p>
+        <p class="description"></p>
     </section>
     <footer>
         <p>&copy; 2025 Mind Games Lab LLC. All rights reserved.</p>
