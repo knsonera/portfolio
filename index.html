@@ -3,257 +3,409 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="google-site-verification" content="VAcoZsAQ5W63dDn53Kt8TvwjRjbpvD2xIqL4lI09Xx4" />
-    <title>Mind Games Lab LLC</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Alina Uzhvieva | Software Engineer & Game Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;800&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <style>
         body {
             font-family: 'Montserrat', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #F5F7FA;
+            background-color: #F8F8F8;
             color: #333;
-            line-height: 1.8;
+            overflow-x: hidden;
         }
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: #d9d9d9;
-            padding: 20px 50px;
-            top: 0;
-            z-index: 1000;
+            background: #FFFFFF;
+            padding: 30px 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
         }
-        header img {
-            max-height: 100px;
-            background-color: #d9d9d9;
-            padding: 10px;
+        header h2 {
+            color: #2A9D8F;
+            margin: 0;
         }
         nav {
             display: flex;
-            gap: 30px;
+            align-items: center;
         }
         nav a {
-            color: #333;
+            color: #2A9D8F;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s;
+            margin: 0 15px;
+            transition: color 0.3s;
         }
         nav a:hover {
-            color: #5D3A78;
+            color: #E9C46A;
         }
-        .cta-button {
-            background-color: #5D3A78;
-            color: white;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 30px;
         }
-        .cta-button:hover {
-            background-color: #835DA5;
+        .hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #2A9D8F;
         }
         .hero {
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            padding: 20px;
-            background-color: white;
-        }
-        .hero-text {
-            max-width: 500px;
+            text-align: center;
+            padding: 80px 20px;
+            background: linear-gradient(135deg, #2A9D8F, #E9C46A);
+            color: #FFF;
         }
         .hero h1 {
-            font-size: 40px;
+            font-size: 48px;
             font-weight: 800;
-            color: #5D3A78;
+            text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
         }
         .hero p {
+            line-height: 1.5;
+            margin: 20px;
+        }
+        .scroll-btn {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 12px 24px;
             font-size: 18px;
-            color: #555;
+            font-weight: bold;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: #fff;
+            background: linear-gradient(135deg, #2A9D8F, #E9C46A); /* Matching the hero gradient */
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+            border: none;
         }
-        .hero img {
-            max-width: 400px;
-            border-radius: 2px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+
+        .scroll-btn:hover {
+            background: linear-gradient(135deg, #E9C46A, #2A9D8F); /* Inverted gradient for hover effect */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
         }
-        .section {
-            padding: 0px 30px 30px 30px;
+
+        .scroll-btn:active {
+            transform: translateY(0);
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        .gallery {
             text-align: center;
+            padding: 50px 20px;
+            background-color: #fff; /* Matches site styling */
         }
-        .section h2 {
+
+        .gallery h2 {
+            color: #2A9D8F;
             font-size: 32px;
-            font-weight: 800;
-            color: #5D3A78;
+            margin-bottom: 20px;
         }
-        .section p {
-            font-size: 18px;
-            color: #555;
-            max-width: 700px;
-            margin: 0 auto;
+
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            padding: 0 10px;
         }
-        .tiles {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 30px;
-            margin-top: 40px;
-        }
-        .tile {
-            background-color: #FFFFFF;
-            padding: 30px;
-            border-radius: 10px;
+
+        .gallery-container img {
+            width: 100%;
+            border-radius: 1px;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            max-width: 600px;
+            transition: transform 0.3s ease-in-out;
         }
-        .tile img {
-            max-width: 100px;
-            margin: 0 auto 20px;
+
+        .gallery-container img:hover {
+            transform: scale(1.05);
+        }
+
+        .projects {
+            text-align: center;
+            padding: 50px 20px;
+        }
+
+        .projects h2 {
+            color: #2A9D8F;
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        /* Filter Buttons */
+        .project-filters {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Hide the filter buttons on mobile */
+        .filter-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        /* Filter Hamburger (hidden on desktop) */
+        .filter-hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 25px;
+            cursor: pointer;
+        }
+
+        .filter-hamburger div {
+            width: 30px;
+            height: 4px;
+            background-color: #2A9D8F;
+            transition: 0.3s;
+        }
+
+        .filter-btn {
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #E9C46A;
+        }
+
+        /* Filters Toggle Button */
+        .filter-toggle-btn {
+            display: none;
+            background: #2A9D8F;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        /* Change button on hover */
+        .filter-toggle-btn:hover {
+            background: #E9C46A;
+        }
+
+        /* Hide projects by default and show only when selected */
+        .project-card {
+            display: none;
+            width: 90%;
+            background: #FFF;
+            color: #333;
+            padding: 50px;
+            text-align: left;
+            margin: 20px auto;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .project-card.show {
             display: block;
         }
-        .tile h3 {
-            color: #5D3A78;
-            font-size: 22px;
+
+        .carousel {
+            width: 100%;
+            margin-top: 20px;
+            overflow: hidden;
+            position: relative;
         }
-        .tile p {
-          padding-bottom: 10px;
+        .carousel img, .carousel video {
+            width: 100%;
+            height: auto;
+            max-height: 500px;
+            object-fit: contain;
+            display: block;
+            margin: 0 auto;
         }
-        .note {
-          color: #4da5c6;
-          font-weight: 600;
-          padding-top: 20px;
+        .slick-prev, .slick-next {
+            font-size: 24px;
+            color: #2A9D8F !important;
+            z-index: 10;
         }
-        .description {
-          font-size: 18px;
-          color: #444;
-          line-height: 1.8;
-          text-align: justify;
-          padding: 15px;
+        .slick-prev {
+            left: 10px;
         }
-        .about-section img {
-          max-width: 300px;
+        .slick-next {
+            right: 10px;
+        }
+        .slick-prev:hover, .slick-next:hover {
+            color: #E9C46A !important;
+        }
+        .slick-prev:before, .slick-next:before {
+            font-size: 30px;
+            color: #2A9D8F;
+        }
+        .project-report {
+            margin-top: 20px;
         }
         footer {
             text-align: center;
-            padding: 50px;
-            background-color: #5D3A78;
-            color: white;
-            font-size: 14px;
+            padding: 40px;
+            background-color: #FFFFFF;
+            color: #2A9D8F;
         }
-        @media (max-width: 900px) {
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
             header {
+                flex-direction: row;
                 justify-content: space-between;
-                padding: 15px 30px;
+                align-items: center;
+                padding: 15px 20px;
+                position: relative; /* Ensures the menu stays within header */
             }
-            header img {
-                max-height: 80px;
+
+            .hamburger {
+                display: flex;
+                margin-left: auto;
+                cursor: pointer;
+                flex-direction: column;
+                justify-content: space-around;
+                width: 30px;
+                height: 30px;
             }
+
+            .hamburger div {
+                width: 30px;
+                height: 4px;
+                background-color: #2A9D8F;
+                transition: 0.3s;
+            }
+
             nav {
                 display: none;
-            }
-            .cta-button {
-              text-align: center;
-            }
-            .hero {
-                flex-direction: column;
+                position: absolute;
+                top: 60px; /* Adjust so it appears below the header */
+                right: 0;
+                background: white;
+                width: 100%;
                 text-align: center;
-                background: url('assets/me.png') no-repeat top center/cover;
-                padding-top: 400px;
+                box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+                padding: 15px 0;
+                z-index: 100; /* Ensure it overlays other content */
             }
-            .hero-text {
-                background: rgba(255, 255, 255, 0.6);
-                color: white;
-                padding: 30px;
-                border-radius: 10px;
-                max-width: 90%;
+
+            nav.active {
+                display: flex;
+                flex-direction: column;
             }
-            .hero h1 {
-                font-size: 25px;
-                font-weight: 800;
-                color: #5D3A78;
-                margin: 0;
+
+            nav a {
+                padding: 15px;
+                font-size: 18px;
+                display: block;
             }
-            .hero p {
-                margin-bottom: 30px;
+
+            .filter-hamburger {
+                display: flex; /* Show hamburger on mobile */
+                margin: 0 auto;
             }
-            .hero img {
-                display: none;
+
+            .filter-toggle-btn {
+                display: block; /* Show Filters button */
+                margin: 0 auto;
             }
-            .tiles {
+
+            .filter-buttons {
+                display: none; /* Hide filters by default */
                 flex-direction: column;
                 align-items: center;
+                width: 100%;
             }
-            .about-section img {
-                max-width: 250px;
+
+            .filter-buttons.active {
+                display: flex; /* Show filters when active */
+            }
+
+            .filter-btn {
+                width: 100%;
+                text-align: center;
+                padding: 10px;
+                margin: 0px;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <img src="assets/name-logo.png" alt="Mind Games Lab Logo">
-        <nav>
-            <a href="#projects">Projects</a>
-            <a href="#volunteer">Volunteering</a>
+        <h2>Alina Uzhvieva</h2>
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <nav id="navbar">
             <a href="#about">About</a>
+            <a href="#projects">Projects</a>
+            <a href="#volunteering">Volunteering</a>
             <a href="#contact">Contact</a>
         </nav>
-        <a href="#contact" class="cta-button">Get in Touch</a>
     </header>
+
     <section class="hero">
-        <div class="hero-text">
-            <h1>Blending Psychology & Technology for Growth</h1>
-            <p>At Mind Games Lab we develop innovative, gamified apps that help people build habits, foster connections, and enhance self-awareness through smart technology.</p>
-            <a href="#projects" class="cta-button">Explore Our Apps</a>
-        </div>
-        <img src="assets/me.png" alt="Alina Uzhvieva Portrait">
+        <h1>Hey there!</h1>
+        <p>I’m Alina Uzhvieva. A software engineer, game developer, and creator of immersive digital experiences.</p>
+        <p>I build sleek, high-performance applications that don’t just work — they <strong>engage</strong>. My purpose is to create interactive, visually polished, and player-focused experiences that <strong>stand out</strong>.</p>
+        <p>As the founder of <strong>Mind Games Lab</strong>, I don’t just code — I solve problems and innovate. I design, prototype, and launch original mobile and web applications that push creative and technical boundaries. My passion? Blending game mechanics, intuitive UI/UX, and cutting-edge tech to create products people <strong>love</strong> to use.</p>
+        <p>Great design is invisible. Great gameplay is unforgettable. I aim for both.</p>
+
+        <!-- Scroll Button -->
+        <a href="#projects" class="scroll-btn">View My Work</a>
     </section>
-    <section id="projects" class="section">
+
+    <section class="gallery">
+        <h2>Highlights</h2>
+        <div class="gallery-container">
+            <img src="assets/placeholder.webp" alt="Project Highlight 1">
+            <img src="assets/placeholder.webp" alt="Project Highlight 2">
+            <img src="assets/placeholder.webp" alt="Project Highlight 3">
+            <img src="assets/placeholder.webp" alt="Project Highlight 4">
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
         <h2>Projects</h2>
-        <div class="tiles">
-            <div class="tile">
-                <img src="assets/habitbuddies.png" alt="Habit Buddies">
-                <h3>Habit Buddies</h3>
-                <p>HabitBuddies is a mobile app that turns habit-building into a team adventure. If you want to start running, reading, meditating, or even flossing regularly, you can create a quest in HabitBuddies for a week, a month, or any timeframe and invite friends to build the habit together.</p>
-                <p>It’s easier together—you can discuss progress and achievements in a chat, support each other with likes and power-ups, and track your friends’ progress. This makes the process not only effective but also genuinely fun!</p>
-                <p class="note">Currently in development.</p>
-            </div>
-            <div class="tile">
-                <img src="assets/arcana.png" alt="Arcana App">
-                <h3>Arcana App</h3>
-                <p>Arcana App is a simple and inspiring way to see any situation from a new perspective using tarot cards—without mysticism or magic. The app offers a variety of spreads for all kinds of questions, plus a Card of the Day feature to bring you guidance, support, or a spark of inspiration whenever you need it.</p>
-                <p>Your readings are saved locally, and if you ever want a deeper interpretation, you can send your cards to a professional tarot reader for a detailed consultation.</p>
-                <p class="note">Currently in development.</p>
+        <!-- Filter Buttons -->
+        <div class="project-filters">
+            <button class="filter-toggle-btn" id="filter-toggle-btn">Filters</button>
+            <div class="filter-buttons" id="filter-buttons">
+                <button class="filter-btn active" data-category="all">Show All</button>
+                <button class="filter-btn" data-category="mobile">Mobile Apps</button>
+                <button class="filter-btn" data-category="web">Web Dev</button>
+                <button class="filter-btn" data-category="games">Game Dev & 3D</button>
+                <button class="filter-btn" data-category="data-science">ML & Data</button>
             </div>
         </div>
+
+        <div class="project-container"></div>
     </section>
-    <section id="volunteer" class="section">
-        <h2>Community Contributions</h2>
-        <div class="tiles">
-          <div class="tile">
-              <img src="assets/sva.png" alt="SVA Icon">
-              <h3>Gurudevi Nirmalananda App</h3>
-              <p>Developed for the spiritual teacher Gurudevi Nirmalananda Saraswati, a modern-day sage and Guru, this app provides yogic wisdom for modern living. The app contains a collection of quotes, teachings, meditative insights, podcasts and videos, and informs the yogic community about upcoming programs and events.</p>
-              <p class="note">Available on <a href="https://apps.apple.com/us/app/gurudevi-nirmalananda/id6502962204">App Store</a> and <a href="https://play.google.com/store/apps/details?id=org.svaroopa.GNSapp">Google Play</a>.</p>
-          </div>
-      </div>
-    </section>
-    <section id="about" class="section">
-        <h2>Meet the Founder</h2>
-        <div class="about-section">
-            <img src="assets/founder.jpg" alt="Alina Uzhvieva Portrait">
-            <p class="description">Hello! I am Alina Uzhvieva, the founder of Mind Games Lab. As a software engineer and entrepreneur, I'm excited to make meaningful tools for personal growth and well-being. With a background in both computer science and psychology, and years of experience in software engineering, I founded Mind Games Lab to create apps that inspire healthier habits, support in daily challenges, build meaningful connections and empower people to navigate their daily lives with ease and joy.</p>
-        </div>
-    </section>
-    <section id="contact" class="section">
-        <h2>Contact</h2>
-        <p class="description">Whether you have a question about current projects, collaboration opportunities, or just want to connect, feel free to reach out. Your feedback and ideas help Mind Games Lab grow and improve!</p>
-        <p class="note">Email: <a href="mailto:admin@mindgameslab.com">admin@mindgameslab.com</a></p>
-        <p class="description"></p>
-    </section>
+
     <footer>
-        <p>&copy; 2025 Mind Games Lab LLC. All rights reserved.</p>
+        <p>&copy; 2025 Alina Uzhvieva | <a href="https://github.com/knsonera" style="color: #2A9D8F;">GitHub</a> | <a href="https://linkedin.com/in/alina-uzhvieva" style="color: #2A9D8F;">LinkedIn</a></p>
     </footer>
 </body>
+<script src="assets/projects.js"></script>
+<script src="index.js"></script>
 </html>
