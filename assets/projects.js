@@ -3,8 +3,8 @@ const projects = [
         category: "mobile",
         name: "Arcana App",
         description: "Tarot readings at your fingertips",
-        tech: "React Native,",
-        screenshots: ["assets/placeholder.webp"],
+        tech: "React Native",
+        screenshots: ["assets/arcana1.png", "assets/arcana2.png", "assets/arcana3.png"],
         report: "#"
     },
     {
