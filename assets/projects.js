@@ -1,26 +1,42 @@
 const projects = [
     {
         category: "mobile",
-        name: "Fitness Tracker App",
-        description: "Health & fitness mobile app",
-        tech: "React Native, Firebase",
-        screenshots: ["assets/placeholder.webp", "assets/placeholder.webp"],
+        name: "Arcana App",
+        description: "Tarot readings at your fingertips",
+        tech: "React Native,",
+        screenshots: ["assets/placeholder.webp"],
         report: "#"
     },
     {
         category: "web",
-        name: "Portfolio Website",
-        description: "Personal portfolio & blog",
+        name: "Drawing App",
+        description: "PaintBrush clone",
+        tech: "P5.js, JavaScript",
+        screenshots: ["assets/drawing.png"],
+        report: "#"
+    },
+    {
+        category: "web",
+        name: "The 5 O'Clock Club",
+        description: "Community website with a blog and an event calendar",
         tech: "HTML, CSS, JavaScript",
-        screenshots: ["assets/placeholder.webp", "assets/placeholder.webp"],
+        screenshots: ["assets/community.png", "assets/community2.png"],
+        report: "#"
+    },
+    {
+        category: "web",
+        name: "My Smart Home",
+        description: "Smart home control panel in your browser",
+        tech: "HTML, CSS, JavaScript",
+        screenshots: ["assets/smarthome.png"],
         report: "#"
     },
     {
         category: "games",
-        name: "Intro to Programming",
-        description: "Arcade game (Mario-style)",
+        name: "Princess Adventures",
+        description: "Web arcade game, Mario-style",
         tech: "P5.js",
-        screenshots: ["assets/placeholder.webp", "assets/placeholder.webp"],
+        screenshots: ["assets/princess.png"],
         report: "#"
     },
     {
