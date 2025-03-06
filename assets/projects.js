@@ -8,6 +8,14 @@ const projects = [
         report: "#"
     },
     {
+        category: "mobile",
+        name: "HabitBuddies",
+        description: "Building new healthy habits with friends",
+        tech: "React Native",
+        screenshots: ["assets/habitbuddies1.png", "assets/habitbuddies2.png", "assets/habitbuddies3.png"],
+        report: "#"
+    },
+    {
         category: "web",
         name: "Drawing App",
         description: "PaintBrush clone",
