@@ -16,6 +16,14 @@ const projects = [
         report: "#"
     },
     {
+        category: "mobile",
+        name: "Gurudevi Nirmalanada App",
+        description: "Yogic Wisdom for Modern Living",
+        tech: "React Native",
+        screenshots: ["assets/gurudevi.png"],
+        report: "#"
+    },
+    {
         category: "web",
         name: "Drawing App",
         description: "PaintBrush clone",
