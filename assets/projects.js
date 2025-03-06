@@ -40,6 +40,14 @@ const projects = [
         report: "#"
     },
     {
+        category: "web",
+        name: "Yogiverse",
+        description: "Social Network for yogis",
+        tech: "React",
+        screenshots: ["assets/yogiverse1.png", "assets/yogiverse2.png", "assets/yogiverse3.png"],
+        report: "#"
+    },
+    {
         category: "games",
         name: "Princess Adventures",
         description: "Web arcade game, Mario-style",
