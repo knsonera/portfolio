@@ -57,10 +57,26 @@ const projects = [
     },
     {
         category: "data-science",
-        name: "AI Stock Prediction",
-        description: "Stock market prediction using ML",
-        tech: "Python, TensorFlow",
-        screenshots: ["assets/placeholder.webp", "assets/placeholder.webp"],
+        name: "Exploring recent real estate market trends in Downtown Bellevue",
+        description: "Exploratory data analysis project",
+        tech: "Python, Pandas, Jupyter",
+        screenshots: ["assets/realestate.png"],
+        report: "#"
+    },
+    {
+        category: "data-science",
+        name: "Handwritten Digit Recognition using kNN and Decision Trees**",
+        description: "Classic ML project: fundamental machine learning concepts and algorithms through hands-on implementations",
+        tech: "Python, Numpy, Matplotlib, Jupyter, Scikit-learn, Pillow",
+        screenshots: ["assets/mlbasics.png"],
+        report: "#"
+    },
+    {
+        category: "data-science",
+        name: "Optimizing Multiclass Classification of Reuters Newswires with Deep Learning",
+        description: "Developing a machine learning model capable of accurately classifying short newswires into their categories based on their content",
+        tech: "Python, Tensorflow, Keras",
+        screenshots: ["assets/tensorflow.png"],
         report: "#"
     }
 ];
